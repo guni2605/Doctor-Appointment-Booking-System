@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
 // import { doctors } from "../assets/assets_frontend/assets";
-import DoctorCard from "./doctorCard.jsx";
+//import DoctorCard from "./DoctorCard.jsx";
 import { contextStore } from "../store/ContextStore.jsx";
+import DoctorCard from "./doctorCard";
 const Displaydoctorlist = () => {
   const { doctors } = useContext(contextStore);
   const { category, setCategory } = useContext(contextStore);
