@@ -38,7 +38,7 @@ const Doctordetail = () => {
         currentDate.setHours(
           currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
         );
-        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 0 : 30);
       } else {
         currentDate.setHours(10);
         currentDate.setMinutes(0);
@@ -71,7 +71,7 @@ const Doctordetail = () => {
       let day = date.getDate();
       let month = date.getMonth() + 1;
       let year = date.getFullYear();
-      const slotDate = date + "-" + month + "-" + year;
+      const slotDate = day + "-" + month + "-" + year;
       // console.log(slotDate);
       const { data } = await axios.post(
         backendurl + "/api/user/book-appointment",
