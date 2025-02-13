@@ -173,4 +173,47 @@ const cancelAppointment = async(req,res)=>{
     })
   }
 }
-export {registerUser,LoginUser,bookAppointment,listAppointment,cancelAppointment}
+const getProfile = async (req,res)=>{
+  try{ 
+      const {userId} = req.body;
+      console.log(userId)
+      const user = await userModel.findById(userId).select("-password")
+      if(!user){
+        return res.json({success:false,
+          message:"User not found"
+        })
+      }else{
+        res.json({
+          success:true,
+          user
+        })
+      }
+  }catch(error){
+    return res.json({success:false,
+      message:error
+    })
+  }
+}
+const editProfile = async (req,res)=>{
+  try{
+    const {user} = req.body;
+    //console.log(req.userId)
+    const updatedUser = await userModel.findByIdAndUpdate(req.body.userId,user).select("-password")
+    //console.log(updatedUser)
+    if(!updatedUser){
+      return res.json({
+        success:false,
+        message:"User not found"
+      })
+  }
+  return res.json({
+    success:true,
+    message:"Profile updated"
+})}
+  catch(error){
+    return res.json({success:false,
+      message:error
+    })
+  }
+}
+export {registerUser,LoginUser,bookAppointment,listAppointment,cancelAppointment,getProfile,editProfile}

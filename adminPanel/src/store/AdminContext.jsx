@@ -4,7 +4,7 @@ import axios from "axios";
 export const AdminContext = createContext({});
 const AdminContextProvider = (props) => {
   const [atoken, setaToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+    localStorage.getItem("atoken") ? localStorage.getItem("atoken") : ""
   );
   const changeAvailibility = async (docId) => {
     try {
