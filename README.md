@@ -1,6 +1,9 @@
 # Doctor Appointment Booking System
 
-A full-stack MERN application for managing doctor appointments and medical consultations.
+A Full Stack MERN-Based Doctor Appointment Booking System is a web application that allows patients to book appointments with doctors through an easy-to-use interface. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js), this system provides both front-end and back-end functionality for seamless interactions between patients and healthcare providers
+
+
+
 ![preview](https://github.com/user-attachments/assets/f7a1195f-4ddd-455a-b1ef-d7ab79983672)
 
 
