@@ -1,6 +1,8 @@
 # Doctor Appointment Booking System
 
 A full-stack MERN application for managing doctor appointments and medical consultations.
+![preview](https://github.com/user-attachments/assets/f7a1195f-4ddd-455a-b1ef-d7ab79983672)
+
 
 ## Features
 
