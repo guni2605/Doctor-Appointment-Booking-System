@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt'
 import {v2 as cloudinary}  from 'cloudinary';
 import doctorModel from '../models/doctorModel.js';
 import jwt from "jsonwebtoken"
+import { appointmentModel } from '../models/appointmentModel.js';
 const addDoctor = async(req,res)=>{
     try{
        const {name,email,password,speciality,degree,about,fees,address,experience} = req.body;
@@ -16,20 +17,20 @@ const addDoctor = async(req,res)=>{
             message:"Some details are missing"
         })
      }
-     let cnt = 0;
-     for(let i = 0; i< name.length; i++){
-          if(name[i] >= 'a' && nums[i] <= 'z'){
+   //   let cnt = 0;
+   //   for(let i = 0; i< name.length; i++){
+   //        if(name[i] >= 'a' && name[i] <= 'z'){
 
-          }else{
-            cnt ++;
-          }
-     }
-     if(cnt > 0){
-      return  res.json({
-         success:false,
-         message:"Please enter valid Name"
-     }) 
-     }
+   //        }else{
+   //          cnt ++;
+   //        }
+   //   }
+   //   if(cnt > 0){
+   //    return  res.json({
+   //       success:false,
+   //       message:"Please enter valid Name"
+   //   }) 
+   //   }
      if(!validator.isEmail(email)){
         return res.json({
             success:false,
@@ -121,4 +122,19 @@ const allDoctors = async (req,res)=>{
       })
    }
 }
-export {addDoctor,loginAdmin,allDoctors}
+const allAppointments = async(req,res)=>{
+   try{
+      const appointments = await appointmentModel.find({});
+      return res.json({
+         success:true,
+         appointments
+      })
+   }
+   catch(error){
+     return res.json({
+      success:false,
+      message:error.message
+     })
+   }
+}
+export {addDoctor,loginAdmin,allDoctors,allAppointments}

@@ -17,10 +17,10 @@ const AddDoctor = () => {
   const [about, setAbout] = useState("");
   const [fees, setFees] = useState("");
   const [speciality, setSpeciality] = useState("General physician");
-
+  console.log(speciality);
   const SubmitHandler = async (e) => {
     e.preventDefault();
-
+    console.log(speciality);
     const formdata = new FormData();
     try {
       formdata.append("image", img);

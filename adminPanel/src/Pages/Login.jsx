@@ -3,9 +3,11 @@ import { AdminContext } from "../store/AdminContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { DoctorContext } from "../store/DoctorContext";
 const Login = () => {
   const navigate = useNavigate();
   const { atoken, setaToken, backendUrl } = useContext(AdminContext);
+  const { dtoken, setdToken } = useContext(DoctorContext);
   const [state, setState] = useState("Admin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +23,7 @@ const Login = () => {
         });
         console.log({ email, password });
         if (data.success) {
-          localStorage.setItem("token", data.token);
+          localStorage.setItem("atoken", data.token);
           setaToken(data.token);
           toast.success("Login successfully ");
           navigate("/");
@@ -31,6 +33,23 @@ const Login = () => {
         }
       } else {
         // doctor is using admin
+        const { data } = await axios.post(backendUrl + "/api/doctor/login", {
+          email,
+          password,
+        });
+
+        if (data.success) {
+          localStorage.setItem("dtoken", data.token);
+
+          setdToken(data.token);
+          console.log(data);
+          localStorage.setItem("doctorId", data.id);
+          console.log(localStorage.getItem("doctorId"));
+          // setaToken("");
+          // localStorage.removeItem("atoken")
+          toast.success("Login successfully ");
+          navigate("/");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -68,6 +87,15 @@ const Login = () => {
         >
           Login
         </button>
+        <p>
+          {state == "Admin" ? "Doctor Login ?" : "Admin Login ?"}
+          <span
+            className="underline p-2 "
+            onClick={() => setState(state == "Admin" ? "Doctor" : "Admin")}
+          >
+            Login here
+          </span>
+        </p>
       </div>
     </form>
   );
