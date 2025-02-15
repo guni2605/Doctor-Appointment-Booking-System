@@ -3,7 +3,6 @@
 A Full Stack MERN-Based Doctor Appointment Booking System is a web application that allows patients to book appointments with doctors through an easy-to-use interface. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js), this system provides both front-end and back-end functionality for seamless interactions between patients and healthcare providers
 
 
-
 ![preview](https://github.com/user-attachments/assets/f7a1195f-4ddd-455a-b1ef-d7ab79983672)
 
 
@@ -134,5 +133,4 @@ CLOUDINARY_API_SECRET=your_cloudinary_secret
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
 
