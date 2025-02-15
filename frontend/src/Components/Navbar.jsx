@@ -33,7 +33,9 @@ const Navbar = () => {
           <hr className=" border-none outline-none h-0.5 bg-primary w-4/5 m-auto hidden" />
         </NavLink>
         <button className="border-2 border-gray-300 rounded-3xl p-1 text-xs">
-          <a href="https://admin-panel-09j7.onrender.com">Admin Panel</a>
+          <a href="https://doctor-appointment-admin-one.vercel.app/">
+            Admin Panel
+          </a>
         </button>
       </ul>
       {token ? (
