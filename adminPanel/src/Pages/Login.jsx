@@ -42,7 +42,7 @@ const Login = () => {
           localStorage.setItem("dtoken", data.token);
 
           setdToken(data.token);
-          console.log(data);
+          //console.log(data);
           localStorage.setItem("doctorId", data.id);
           console.log(localStorage.getItem("doctorId"));
           // setaToken("");

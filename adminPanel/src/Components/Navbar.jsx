@@ -13,7 +13,7 @@ const Navbar = () => {
     atoken && localStorage.removeItem("atoken");
     dtoken && setdToken("");
     dtoken && localStorage.removeItem("dtoken");
-    Navigate("/");
+    navigate("/");
   };
   return (
     <div className="bg-slate-300 px-[10%] py-[2%] flex justify-between items-center">

@@ -24,7 +24,7 @@ const App = () => {
             {atoken && <Route path="add-doctor" element={<AddDoctor />} />}
             {atoken && <Route path="all-doctors" element={<AllDoctors />} />}
             {atoken && (
-              <Route path="appointment" element={<AllAppointment />} />
+              <Route path="appointments" element={<AllAppointment />} />
             )}
             {dtoken && (
               <Route
