@@ -99,7 +99,7 @@ const Doctordetail = () => {
 
   useEffect(() => {
     filterDoc();
-  }, []);
+  });
   useEffect(() => {
     getAvailableSlots();
   }, [filterlist]);
