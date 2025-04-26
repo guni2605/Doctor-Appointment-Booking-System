@@ -35,7 +35,6 @@ A Full Stack MERN-Based Doctor Appointment Booking System is a web application t
 ### Frontend
 
 - React.js
-- Redux for state management
 - Tailwind CSS for styling
 - Axios for API requests
 
