@@ -7,7 +7,7 @@ A Full Stack MERN-Based Doctor Appointment Booking System is a web application t
 
 
 ## Features
-
+ Architecture diagram : [https://app.eraser.io/workspace/QOdsGg4iRqjGF9qPYVzr?origin=share](https://app.eraser.io/workspace/QOdsGg4iRqjGF9qPYVzr?origin=share)
 ### For Patients
 
 - User registration and authentication
